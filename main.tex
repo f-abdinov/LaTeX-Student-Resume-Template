@@ -1,0 +1,169 @@
+%-------------------------
+% Engineering Student Resume in Latex
+% Author : f-abdinov 
+% Based on: https://www.overleaf.com/project/66de9673f0cd2f229c19c8f4
+% License : MIT
+% This project makes some minor improvements to "Jake's Resume," such as:
+%   -- Cleaning up the code
+%   -- Making all indentation and spacing more consistent throughout the document
+%   -- Providing detailed comments for the preamble. 
+%------------------------
+
+\documentclass[11pt, letterpaper]{article} % Set up US Letter Paper, 11pt font size
+
+% Font and Page Layout
+\usepackage{lmodern} % Set font to Latin Modern. Does not support bold small caps
+\usepackage[margin=0.5in]{geometry} % Set all margins to 0.5 inches
+
+% Hyperlinks
+\usepackage[hidelinks]{hyperref} % Enable clean hyperlinks without borders or colors
+
+% Language and Fonts
+\usepackage[english]{babel} % Set the language to English
+\usepackage{fontawesome5} % Enable Font Awesome 5 icons
+
+% List and Section Formatting
+\usepackage{enumitem} % Customize lists
+\usepackage{titlesec} % Customize section titles
+\usepackage{fancyhdr} % Customize headers and footers
+\pagestyle{fancy} % Use the fancy page style
+\fancyhf{} % Clear all header and footer fields
+\renewcommand{\headrulewidth}{0pt} % Remove the header line
+
+% ATS Processing
+\input{glyphtounicode} % Handle Unicode characters
+\pdfgentounicode=1 % Make PDF text searchable and parsable
+
+% Text Alignment and Spacing
+\raggedbottom % Prevent vertical stretching of the page
+\raggedright % Align text to the left without justification
+
+% Table Formatting
+\setlength{\tabcolsep}{0in} % Set horizontal padding for tables to 0 inches
+
+% Section Formatting
+\titleformat{\section} 
+    {\vspace{-6pt} \scshape \raggedright \Large} % Title formatting: less indentation, small caps text, no justification, large text
+    {} % No section number
+    {0in} % No extra space between the section number and the title
+    {} % No formatting of the space between the section number and the title
+    [\titlerule \vspace{-6pt}] % Add a horizontal line below the section title
+
+% Custom Commands
+\newcommand{\resumeSubheading}[4]{
+  \vspace{0pt}\item % Set up subheading as a list item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{#2} \\ % Position (or College Name) and date in bold
+      \textit{\small #3} & \textit{\small #4} \\ % Company Name (or Degree and GPA) and location in small italics
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeListStart}{
+  \begin{itemize}[leftmargin=0.1in, label={}] % List start with custom margin and no labels
+}
+
+\newcommand{\resumeListEnd}{
+  \end{itemize} \vspace{-6pt} % List end with smaller space after it
+}
+
+\newcommand{\resumeItem}[1]{
+  \item\small{#1 \vspace{-6pt}} % List item with smaller font and smaller spacing
+}
+
+\newcommand{\resumeBulletItem}[1]{
+  \item\small{#1 \vspace{-2pt}} % List item with smaller font and smaller spacing
+}
+
+\newcommand{\resumeItemListStart}{\begin{itemize}[label=\textbullet]} % List start for bullet points
+
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-6pt}} % List end for bullet points
+
+\newcommand{\resumeProjectHeading}[2]{ % Heading for software projects
+    \item
+    \begin{tabular*}{0.98\textwidth}{l@{\extracolsep{\fill}}r} % Similar to \resumeSubheading
+      \small#1 & \textbf{#2} \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\begin{document}
+
+%--------------------RESUME HEADING--------------------
+\begin{center}
+    % Full name
+    {\Huge \scshape [Your Name]} \vspace{5pt} % Bold and small caps for the name
+
+    % Personal information
+    % Location
+    \faMapMarker \hspace{1pt} [City, State, ZIP] $|$ \hspace{1pt} 
+    % Email address
+    \faEnvelope \hspace{1pt} \href{mailto:[your.email@example.com]}{[your.email@example.com]} $|$ \hspace{1pt} 
+    % Phone number
+    \faPhone \hspace{1pt} [Your Phone Number] $|$ \hspace{1pt} 
+    % [OPTIONAL] Citizenship status
+    \faPassport\ [Your Citizenship Status]
+    
+    \vspace{1pt}
+
+    % Additional links
+    % Personal portfolio
+    \href{[PORTFOLIO HYPERLINK]}{\faBriefcase\ [Portfolio URL]} $|$ \hspace{1pt}
+    % LinkedIn
+    \href{[LinkedIn URL]}{\faLinkedin\ {LinkedIn Profile}} $|$ \hspace{1pt}
+    % GitHub 
+    \href{[GitHub URL]}{\faGithub\ {GitHub Profile}} 
+\end{center}
+
+%--------------------EDUCATION--------------------
+\section{Education}
+    \resumeListStart
+        \resumeSubheading{[University Name]}{Expected Graduation -- [Graduation Month Year]}{B.S. in [Your Major], GPA: [Your GPA]}{[City, State]}
+        \resumeItem{\textbf{Honors: }{[Honors and Awards]}}
+        \resumeItem{\textbf{Course Work: }{[Relevant Courses]}}
+    \resumeListEnd
+
+%--------------------SKILLS--------------------
+\section{Skills}
+\resumeListStart
+    \resumeItem{\textbf{Certificates: }{[Certifications]}}
+    \resumeItem{\textbf{Coding Languages: }{[Coding Languages]}}
+    \resumeItem{\textbf{Technical Proficiencies: }{[Technical Skills]}}
+    \resumeItem{\textbf{Languages: }{[Languages Spoken]}}
+\resumeListEnd
+
+%-------------------- WORK EXPERIENCE--------------------
+\section{Experience}
+    \resumeListStart
+        \resumeSubheading {[Company Name]}{Sep [Year] -- Present} {[Your Job Title]}{[City, State]}
+            \resumeItemListStart
+                \resumeBulletItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Integer nec urna sit amet sapien fermentum pretium. Donec sagittis metus sed sem condimentum, eu suscipit velit cursus.}
+                \resumeBulletItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Integer nec urna sit amet sapien fermentum pretium. Donec sagittis metus sed sem condimentum, eu suscipit velit cursus.}
+                \resumeBulletItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Integer nec urna sit amet sapien fermentum pretium. Donec sagittis metus sed sem condimentum, eu suscipit velit cursus.}
+            \resumeItemListEnd
+
+        \resumeSubheading {[Company Name]}{[Start Date] -- [End Date]} {[Your Job Title]}{[City, State]}
+            \resumeItemListStart
+                \resumeBulletItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Integer nec urna sit amet sapien fermentum pretium. Donec sagittis metus sed sem condimentum, eu suscipit velit cursus.}
+                \resumeBulletItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Integer nec urna sit amet sapien fermentum pretium. Donec sagittis metus sed sem condimentum, eu suscipit velit cursus.}
+            \resumeItemListEnd
+
+        \resumeSubheading{[Company Name]}{Sep [Year] -- Jul [Year]} {[Your Job Title]}{[City, State]}
+            \resumeItemListStart
+                \resumeBulletItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Integer nec urna sit amet sapien fermentum pretium. Donec sagittis metus sed sem condimentum, eu suscipit velit cursus.}
+                \resumeBulletItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Integer nec urna sit amet sapien fermentum pretium. Donec sagittis metus sed sem condimentum, eu suscipit velit cursus.}
+                \resumeBulletItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Integer nec urna sit amet sapien fermentum pretium. Donec sagittis metus sed sem condimentum, eu suscipit velit cursus.}
+            \resumeItemListEnd
+
+    \resumeListEnd
+
+%--------------------PROJECTS--------------------
+\section{Projects}
+    \resumeListStart
+        \resumeProjectHeading{\textbf{[Project Name]} $|$ \emph{[Technologies Used]}}{[Start Date] -- [Present/End Date]}
+            \resumeItemListStart
+                \resumeBulletItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Integer nec urna sit amet sapien fermentum pretium. Donec sagittis metus sed sem condimentum, eu suscipit velit cursus.}
+                \resumeBulletItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Integer nec urna sit amet sapien fermentum pretium. Donec sagittis metus sed sem condimentum, eu suscipit velit cursus.}
+                \resumeBulletItem{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Integer nec urna sit amet sapien fermentum pretium. Donec sagittis metus sed sem condimentum, eu suscipit velit cursus.}
+            \resumeItemListEnd
+    \resumeListEnd
+
+\end{document}
