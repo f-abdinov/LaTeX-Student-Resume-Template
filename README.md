@@ -24,4 +24,4 @@ This template is based on: https://www.overleaf.com/project/66de9673f0cd2f229c19
     pdflatex main.tex
     ```
 
-Or use Overleaf for online editing.
+Or use [Overleaf](https://www.overleaf.com/) for online editing.
