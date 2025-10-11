@@ -8,9 +8,10 @@ This is a clean and simple LaTeX resume template optimized for students in techn
    git clone https://github.com/f-abdinov/student-resume-template.git
    cd latex-resume-template
    ```
-2. **Edit** main.tex: Replace placeholders with your information.
+2. **Edit** main.tex:
+   Replace placeholders with your information.
 
-3. **Compile**:
+4. **Compile**:
 
     ```bash
     pdflatex main.tex
